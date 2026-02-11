@@ -1,0 +1,355 @@
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+    --bg: #f9fafb;
+    --bg-alt: #f3f4f6;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 3rem 2rem;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sekcja-glowna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sekcja-glowna article {
+    max-width: 600px;
+}
+
+.sekcja-glowna h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.sekcja-glowna p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: 0.875rem 1.75rem;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+    transform: translateY(-2px);
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#formularzZadania,
+#formularzKontaktowy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#formularzZadania button,
+#formularzKontaktowy button {
+    width: 100%;
+}
+
+.siatka-zadan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.karta-zadania {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.karta-zadania:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+.karta-zadania p {
+    flex: 1;
+    word-break: break-word;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+
+.karta-zadania p:hover:not(.ukonczone) {
+    color: var(--primary);
+}
+
+.ukonczone {
+    text-decoration: line-through;
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.karta-zadania button {
+    background: var(--danger);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+    width: 100%;
+}
+
+.karta-zadania button:hover {
+    background: #dc2626;
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.25);
+}
+
+footer {
+    background: white;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+#komunikatBledu,
+#komunikatKontakt {
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 40px;
+    display: none;
+}
+
+#komunikatBledu {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+#komunikatKontakt {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+#komunikatBledu:not(:empty),
+#komunikatKontakt:not(:empty) {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.75rem 0;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .sekcja-glowna h2 {
+        font-size: 1.875rem;
+    }
+
+    .siatka-zadan {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #formularzZadania,
+    #formularzKontaktowy {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}

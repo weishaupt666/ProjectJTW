@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarządzanie zadaniami</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<header>
+    <h1>Twoje zadania</h1>
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="zadania.html">Zadania</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<section>
+    <form id="formularzZadania">
+        <input type="text" id="noweZadanie" placeholder="Wpisz nowe zadanie">
+        <button type="submit">Dodaj</button>
+        <p id="komunikatBledu"></p>
+    </form>
+</section>
+
+<section id="listaZadan" class="siatka-zadan"></section>
+
+<footer>
+    <p>© 2026 Planer Zadań</p>
+</footer>
+
+<script src="skrypt.js"></script>
+</body>
+</html>
